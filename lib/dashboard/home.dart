@@ -1,9 +1,15 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/dashboard/cart.dart';
+import 'package:food_delivery_app/dashboard/meun.dart';
+import 'package:food_delivery_app/dashboard/personal_profiles.dart';
 import 'package:food_delivery_app/dashboard/search.dart';
 import 'package:food_delivery_app/utilities/colors.dart';
 import 'package:food_delivery_app/utilities/text.dart';
+import 'package:food_delivery_app/widgets/category_widget.dart';
+import 'package:food_delivery_app/widgets/drawer.dart';
+import 'package:get/get.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -11,14 +17,41 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: AppDrawer(),
+      appBar: AppBar(
+        backgroundColor: white,
+        foregroundColor: black,
+        elevation: 0,
+        title: ListTile(
+          title: Text("DELIVER TO"),
+          subtitle: Text("Halal Lab Office"),
+        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Cart(),
+                    ));
+              },
+              child: CircleAvatar(
+                backgroundColor: black,
+                child: Icon(Icons.shopping_bag, color: white),
+              ),
+            ),
+          ),
+        ],
+      ),
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 25, vertical: 45),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Image(image: AssetImage("assets/images/top.png")),
-              SizedBox(height: 25),
+              // Image(image: AssetImage("assets/images/top.png")),
               Text("Hey Halal, Good Afternoon", style: text18),
               SizedBox(height: 26),
               SizedBox(
@@ -59,100 +92,19 @@ class Home extends StatelessWidget {
               ),
               SizedBox(height: 20),
               SizedBox(
-                height: 162,
+                height: 220,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
-                    Card(
-                      margin: EdgeInsets.only(right: 15, left: 10),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            width: 122,
-                            height: 104,
-                            decoration: BoxDecoration(
-                              color: grey,
-                              borderRadius: BorderRadius.circular(15),
-                            ),
-                          ),
-                          Text("Pizza", style: text18),
-                          Text(
-                            "starting       £70",
-                            style: text16,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Card(
-                      margin: EdgeInsets.only(right: 15, left: 10),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            width: 122,
-                            height: 104,
-                            decoration: BoxDecoration(
-                              color: grey,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                          ),
-                          Text("Burger", style: text18),
-                          Text("starting       £50", style: text16),
-                        ],
-                      ),
-                    ),
-                    Card(
-                      margin: EdgeInsets.only(right: 15, left: 10),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            width: 122,
-                            height: 104,
-                            decoration: BoxDecoration(
-                              color: grey,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                          ),
-                          Text("Pizza", style: text18),
-                          Text("starting       £60", style: text16),
-                        ],
-                      ),
-                    ),
-                    Card(
-                      margin: EdgeInsets.only(right: 15, left: 10),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            width: 122,
-                            height: 104,
-                            decoration: BoxDecoration(
-                              color: grey,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                          ),
-                          Text("Burger", style: text18),
-                          Text("starting       £40", style: text16),
-                        ],
-                      ),
-                    ),
+                    CategoryWidget(name: "Pizza", price: 40),
+                    CategoryWidget(name: "Shawarma", price: 410),
+                    CategoryWidget(name: "Shawarma", price: 410),
+                    CategoryWidget(name: "Shawarma", price: 410),
+                    CategoryWidget(name: "Shawarma", price: 410),
                   ],
                 ),
               ),
+
               SizedBox(height: 20),
               Row(
                 children: [
@@ -295,3 +247,4 @@ class Home extends StatelessWidget {
     );
   }
 }
+

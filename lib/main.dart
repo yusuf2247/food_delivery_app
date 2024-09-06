@@ -2,24 +2,6 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:food_delivery_app/dashboard/addcard.dart';
-import 'package:food_delivery_app/dashboard/address.dart';
-import 'package:food_delivery_app/dashboard/call.dart';
-import 'package:food_delivery_app/dashboard/cart.dart';
-import 'package:food_delivery_app/dashboard/details.dart';
-import 'package:food_delivery_app/dashboard/editporfile.dart';
-import 'package:food_delivery_app/dashboard/history_orders.dart';
-import 'package:food_delivery_app/dashboard/home.dart';
-import 'package:food_delivery_app/dashboard/map.dart';
-import 'package:food_delivery_app/dashboard/message.dart';
-import 'package:food_delivery_app/dashboard/meun.dart';
-import 'package:food_delivery_app/dashboard/newaddress.dart';
-import 'package:food_delivery_app/dashboard/orders.dart';
-import 'package:food_delivery_app/dashboard/payment.dart';
-import 'package:food_delivery_app/dashboard/paymentsuccessfull.dart';
-import 'package:food_delivery_app/dashboard/personal_profiles.dart';
-import 'package:food_delivery_app/dashboard/search.dart';
-import 'package:food_delivery_app/splash1.dart';
 import 'package:food_delivery_app/splash_page.dart';
 import 'package:food_delivery_app/utilities/text.dart';
 import 'package:get/get.dart';

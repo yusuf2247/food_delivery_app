@@ -13,31 +13,19 @@ class Menu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: white,
+        foregroundColor: black,
+        elevation: 0,
+        title: Text("Profile"),
+        centerTitle: false,
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(18.0),
           child: Column(
             children: [
-              SizedBox(height: 20),
-              Container(
-                child: Row(
-                  children: [
-                    IconButton.filled(
-                      onPressed: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //     builder: (context) => const Paymentsuccessfull(),
-                        //   ),
-                        // );
-                      },
-                      icon: const Icon(Icons.arrow_back_ios_new, size: 23),
-                    ),
-                    Text("Profile", style: text18),
-                  ],
-                ),
-              ),
-              SizedBox(height: 10),
+              
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

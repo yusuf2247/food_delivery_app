@@ -13,6 +13,10 @@ class Cart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: white,
+        foregroundColor: black,
+      ),
       backgroundColor: black,
       body: SingleChildScrollView(
         child: Container(
@@ -27,12 +31,7 @@ class Cart extends StatelessWidget {
                       children: [
                         IconButton.filled(
                           onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const Burger(),
-                              ),
-                            );
+                            Navigator.pop(context);
                           },
                           icon: const Icon(Icons.arrow_back_ios_new,
                               size: 23, color: Colors.white),
